@@ -1,0 +1,5 @@
+.vercel
+.env*
+credentials.json
+token.json
+datingroguelike-f9e7838050e8.json

@@ -1,0 +1,62 @@
+{
+  "_instructions": {
+    "weight": "How much this field contributes to the total score (0–100). All weights are relative — they don't need to sum to 100.",
+    "condition_type": {
+      "less_than"    : "Numeric — scores if field value <  threshold",
+      "greater_than" : "Numeric — scores if field value >  threshold",
+      "between"      : "Numeric — scores if min <= field value <= max. Use 'value': [min, max]",
+      "equal_to"     : "Exact string/number match",
+      "in_list"      : "Field value must be one of the listed options",
+      "compatible_with": "Field value must appear in one of the same compatibility groups"
+    },
+    "partial_credit": "Optional (default false). If true, numeric conditions give scaled 0–1 credit instead of all-or-nothing.",
+    "note": "Field names must exactly match the column headers in your Google Sheet (case-sensitive)."
+  },
+
+  "Age": {
+    "weight": 20,
+    "condition_type": "between",
+    "value": [24, 35],
+    "partial_credit": true
+  },
+
+  "Location": {
+    "weight": 15,
+    "condition_type": "in_list",
+    "value": ["Los Angeles, CA", "San Francisco, CA", "New York, NY", "Remote"]
+  },
+
+  "Career": {
+    "weight": 10,
+    "condition_type": "in_list",
+    "value": ["Software Engineer", "Designer", "Product Manager", "Artist", "Entrepreneur"]
+  },
+
+  "MBTI": {
+    "weight": 20,
+    "condition_type": "compatible_with",
+    "groups": [
+      ["INTJ", "ENTJ", "INFJ", "ENFJ"],
+      ["INTP", "ENTP", "INFP", "ENFP"],
+      ["ISTJ", "ESTJ", "ISFJ", "ESFJ"],
+      ["ISTP", "ESTP", "ISFP", "ESFP"]
+    ]
+  },
+
+  "Love Language": {
+    "weight": 20,
+    "condition_type": "in_list",
+    "value": ["Quality Time", "Words of Affirmation"]
+  },
+
+  "Horoscope": {
+    "weight": 15,
+    "condition_type": "compatible_with",
+    "groups": [
+      ["Aries", "Leo", "Sagittarius"],
+      ["Taurus", "Virgo", "Capricorn"],
+      ["Gemini", "Libra", "Aquarius"],
+      ["Cancer", "Scorpio", "Pisces"]
+    ]
+  }
+}
