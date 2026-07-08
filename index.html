@@ -510,7 +510,7 @@
     function isMain(p) {
       if (!mainProfile) return false;
       const f = p.fields||p;
-      return (fields.length?fields:Object.keys(mainProfile)).every(k=>(f[k]||')===(mainProfile[k]||''));
+      return (fields.length?fields:Object.keys(mainProfile)).every(k=>(f[k]||'')===(mainProfile[k]||''));
     }
     c.innerHTML = '<div class="profile-grid">'+profiles.map(p=>{
       const f=p.fields||p, main=isMain(p);
