@@ -25,122 +25,31 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-    /* ── Header ────────────────────────────────────────────────── */
-    .header {
-      background: var(--plum);
-      padding: 16px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .header-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 600;
-      color: #fff;
-      white-space: nowrap;
-    }
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
-    }
+    /* ── Header ─────────────────────────────────────────────── */
+    .header { background: var(--plum); padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .header-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: #fff; white-space: nowrap; }
+    .header-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
     #lastUpdated { font-size: 11px; color: rgba(255,255,255,0.3); }
 
-    /* ── Main Profile Banner ───────────────────────────────────── */
-    .main-banner {
-      background: var(--plum-mid);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding: 10px 32px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 44px;
-    }
-    .banner-badge {
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--accent);
-      background: rgba(194,82,122,0.15);
-      border: 1px solid rgba(194,82,122,0.35);
-      border-radius: 99px;
-      padding: 2px 10px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .banner-fields {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px 14px;
-      flex: 1;
-    }
-    .banner-field {
-      font-size: 12px;
-      color: rgba(255,255,255,0.6);
-    }
+    /* ── Main Profile Banner ─────────────────────────────────── */
+    .main-banner { background: var(--plum-mid); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 10px 32px; display: flex; align-items: center; gap: 12px; min-height: 44px; }
+    .banner-badge { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); background: rgba(194,82,122,0.15); border: 1px solid rgba(194,82,122,0.35); border-radius: 99px; padding: 2px 10px; white-space: nowrap; flex-shrink: 0; }
+    .banner-fields { display: flex; flex-wrap: wrap; gap: 4px 14px; flex: 1; }
+    .banner-field { font-size: 12px; color: rgba(255,255,255,0.6); }
     .banner-field b { color: rgba(255,255,255,0.9); font-weight: 500; }
-    .banner-empty {
-      font-size: 12px;
-      color: rgba(255,255,255,0.3);
-      font-style: italic;
-    }
-    .banner-score {
-      font-size: 13px;
-      font-weight: 600;
-      padding: 3px 12px;
-      border-radius: 99px;
-      flex-shrink: 0;
-    }
+    .banner-empty { font-size: 12px; color: rgba(255,255,255,0.3); font-style: italic; }
+    .banner-score { font-size: 13px; font-weight: 600; padding: 3px 12px; border-radius: 99px; flex-shrink: 0; }
 
-    /* ── Controls bar ──────────────────────────────────────────── */
-    .controls {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 10px 32px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .controls-label {
-      font-size: 12px;
-      color: var(--text-3);
-      font-weight: 500;
-    }
-    .num-input {
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      width: 60px;
-      padding: 6px 10px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: var(--bg);
-      color: var(--text);
-      outline: none;
-      text-align: center;
-    }
+    /* ── Controls ────────────────────────────────────────────── */
+    .controls { background: var(--surface); border-bottom: 1px solid var(--border); padding: 10px 32px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .controls-label { font-size: 12px; color: var(--text-3); font-weight: 500; }
+    .num-input { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; width: 60px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); outline: none; text-align: center; }
     .num-input:focus { border-color: var(--accent); }
-    .divider { width: 1px; height: 22px; background: var(--border); margin: 0 4px; }
+    .ctrl-divider { width: 1px; height: 22px; background: var(--border); margin: 0 4px; }
 
-    /* ── Buttons ───────────────────────────────────────────────── */
-    .btn {
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      padding: 7px 14px;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.15s;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+    /* ── Buttons ─────────────────────────────────────────────── */
+    .btn { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; padding: 7px 14px; border-radius: 6px; border: none; cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 6px; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
     .btn-ghost { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.18); }
     .btn-ghost:hover:not(:disabled) { background: rgba(255,255,255,0.18); }
     .btn-primary { background: var(--accent); color: #fff; }
@@ -154,29 +63,27 @@
     .btn.loading .btn-label { opacity: 0.7; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ── Tabs ──────────────────────────────────────────────────── */
+    /* ── Tabs ────────────────────────────────────────────────── */
     .tabs { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 32px; display: flex; }
     .tab { font-size: 13px; font-weight: 500; padding: 12px 16px; border: none; border-bottom: 2px solid transparent; background: none; cursor: pointer; color: var(--text-2); transition: all 0.15s; margin-bottom: -1px; }
     .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
     .tab:hover:not(.active) { color: var(--text); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
 
-    /* ── Main content ──────────────────────────────────────────── */
+    /* ── Main content ────────────────────────────────────────── */
     .main { max-width: 1100px; margin: 0 auto; padding: 28px 32px; }
 
-    /* ── Stats bar ─────────────────────────────────────────────── */
+    /* ── Stats bar ───────────────────────────────────────────── */
     .stats-bar { display: flex; gap: 12px; margin-bottom: 24px; }
     .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; flex: 1; }
     .stat-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.7px; color: var(--text-3); margin-bottom: 5px; }
     .stat-value { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--text); line-height: 1; }
     .stat-value .unit { font-size: 15px; font-weight: 400; color: var(--text-2); }
 
-    /* ── Leaderboard ───────────────────────────────────────────── */
+    /* ── Leaderboard ─────────────────────────────────────────── */
     .leaderboard { display: flex; flex-direction: column; gap: 11px; }
-    .profile-card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-      padding: 18px 22px; display: grid; grid-template-columns: 56px 1fr;
-      gap: 16px; align-items: start; transition: box-shadow 0.2s;
-    }
+    .profile-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: start; transition: box-shadow 0.2s; }
     .profile-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.07); }
     .profile-card.rank-1 { border-color: #d4af37; background: linear-gradient(120deg,#fff 55%,#fdfbf1); }
     .profile-card.rank-2 { border-color: #b8b8b8; }
@@ -198,7 +105,7 @@
     .chip.hit  { background: #edf7f1; color: #1e8449; }
     .chip.miss { background: #fdf0f0; color: #c0392b; }
 
-    /* ── Profile grid ──────────────────────────────────────────── */
+    /* ── Profile grid ────────────────────────────────────────── */
     .profile-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(268px,1fr)); gap: 13px; }
     .grid-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; transition: box-shadow 0.2s; }
     .grid-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.07); }
@@ -210,13 +117,68 @@
     .grid-key { color: var(--text-2); }
     .grid-val { font-weight: 500; }
 
-    /* ── States ────────────────────────────────────────────────── */
-    .state { text-align: center; padding: 56px 20px; color: var(--text-2); }
+    /* ── Minigame ────────────────────────────────────────────── */
+    .mg-main-ref {
+      background: var(--accent-light);
+      border: 1px solid rgba(194,82,122,0.3);
+      border-radius: 12px;
+      padding: 12px 18px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .mg-header { margin-bottom: 20px; }
+    .mg-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .mg-group-label { font-size: 14px; color: var(--text-2); }
+    .mg-group-label b { color: var(--text); }
+    .mg-field-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .mg-field-tags span:first-child { font-size: 11px; color: var(--text-3); }
+    .mg-tag { background: var(--plum); color: rgba(255,255,255,0.88); font-size: 11px; font-weight: 500; padding: 2px 9px; border-radius: 99px; }
+    .mg-progress-track { height: 4px; background: var(--border); border-radius: 99px; overflow: hidden; }
+    .mg-progress-fill { height: 100%; background: var(--accent); border-radius: 99px; transition: width 0.4s ease; }
+
+    /* Flip cards */
+    .minigame-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: 14px; margin-bottom: 28px; }
+    .flip-scene { perspective: 1200px; height: 296px; cursor: pointer; }
+    .flip-card-inner { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1); }
+    .flip-scene.flipped .flip-card-inner { transform: rotateY(180deg); }
+    .flip-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 14px; padding: 16px 17px; display: flex; flex-direction: column; overflow: hidden; }
+    .flip-front { background: var(--surface); border: 1px solid var(--border); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .flip-back  { background: var(--plum); border: 1px solid rgba(255,255,255,0.1); transform: rotateY(180deg); }
+    .flip-scene:hover .flip-front { border-color: var(--accent); box-shadow: 0 4px 18px rgba(194,82,122,0.14); }
+    .mg-card-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-3); margin-bottom: 10px; }
+    .flip-back .mg-card-label { color: rgba(255,255,255,0.35); }
+    .mg-fields { flex: 1; overflow: hidden; }
+    .mg-row { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; border-bottom: 1px solid var(--border); font-size: 12px; gap: 6px; }
+    .mg-row:last-child { border-bottom: none; }
+    .flip-back .mg-row { border-bottom-color: rgba(255,255,255,0.09); }
+    .mg-key { color: var(--text-2); flex-shrink: 0; }
+    .flip-back .mg-key { color: rgba(255,255,255,0.45); }
+    .mg-val { font-weight: 500; text-align: right; }
+    .flip-back .mg-val { color: #fff; }
+    .mg-hint { font-size: 11px; color: var(--text-3); text-align: center; margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--border); }
+    .flip-back .mg-hint { color: rgba(255,255,255,0.3); border-top-color: rgba(255,255,255,0.09); }
+    .mg-no-hidden { font-size: 12px; font-style: italic; color: rgba(255,255,255,0.35); }
+
+    .minigame-nav { display: flex; align-items: center; justify-content: center; gap: 16px; }
+    .mg-nav-count { font-size: 13px; color: var(--text-3); min-width: 44px; text-align: center; }
+
+    /* ── States ──────────────────────────────────────────────── */
+    .state { text-align: center; padding: 56px 20px; }
     .state .icon { font-size: 38px; margin-bottom: 12px; }
     .state h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 7px; color: var(--text); }
     .state p { font-size: 13px; color: var(--text-3); line-height: 1.65; }
 
-    /* ── Settings modal ────────────────────────────────────────── */
+    /* ── Settings modal ──────────────────────────────────────── */
     .overlay { position: fixed; inset: 0; background: rgba(20,10,30,0.65); display: flex; align-items: center; justify-content: center; z-index: 200; backdrop-filter: blur(2px); }
     .overlay.hidden { display: none; }
     .modal { background: #fff; border-radius: 16px; padding: 32px; width: 460px; max-width: 90vw; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
@@ -229,19 +191,18 @@
     .modal-hint a { color: var(--accent); }
     .modal-footer { display: flex; justify-content: flex-end; gap: 10px; }
 
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-
     @media (max-width: 640px) {
-      .header  { padding: 14px 16px; }
+      .header { padding: 14px 16px; }
       .main-banner { padding: 10px 16px; }
-      .controls { padding: 10px 16px; flex-wrap: wrap; }
-      .tabs  { padding: 0 16px; }
-      .main  { padding: 18px 16px; }
+      .controls { padding: 10px 16px; }
+      .tabs { padding: 0 16px; }
+      .main { padding: 18px 16px; }
       .stats-bar { flex-wrap: wrap; }
       .stat-card { flex: 1 1 calc(50% - 6px); }
       .profile-card { grid-template-columns: 42px 1fr; }
       .rank-number { font-size: 32px; }
+      .minigame-grid { grid-template-columns: repeat(2, 1fr); }
+      .flip-scene { height: 260px; }
     }
   </style>
 </head>
@@ -251,12 +212,11 @@
 <div class="overlay hidden" id="overlay">
   <div class="modal">
     <h2>Connect your Sheet</h2>
-    <p>Enter a Google Sheets API key to load your match data. This is only used for <em>reading</em> — generating and scoring use the server.</p>
+    <p>Enter a Google Sheets API key to load your match data. Only used for reading — generating and scoring use the server.</p>
     <label>Google Sheets API Key</label>
     <input type="password" id="keyInput" placeholder="AIza..." />
     <div class="modal-hint">
-      Get a free key at
-      <a href="https://console.cloud.google.com/apis/credentials" target="_blank">Google Cloud Console</a>
+      Get a free key at <a href="https://console.cloud.google.com/apis/credentials" target="_blank">Google Cloud Console</a>
       → Credentials → Create API Key. Make sure <strong>Google Sheets API</strong> is enabled.
     </div>
     <div class="modal-footer">
@@ -290,24 +250,25 @@
   <span class="controls-label">Profiles</span>
   <input class="num-input" type="number" id="numInput" value="5" min="1" max="50" />
   <button class="btn btn-primary" id="btnGenerate" onclick="runGenerate()">
-    <span class="spinner"></span>
-    <span class="btn-label">Generate</span>
+    <span class="spinner"></span><span class="btn-label">Generate</span>
   </button>
-  <div class="divider"></div>
+  <div class="ctrl-divider"></div>
   <button class="btn btn-secondary" id="btnScore" onclick="runScore()">
-    <span class="spinner"></span>
-    <span class="btn-label">Score All</span>
+    <span class="spinner"></span><span class="btn-label">Score All</span>
   </button>
 </div>
 
 <!-- Tabs -->
 <div class="tabs">
-  <button class="tab active" onclick="switchTab('scores', this)">Match Scores</button>
+  <button class="tab active" onclick="switchTab('scores',  this)">Match Scores</button>
   <button class="tab"        onclick="switchTab('profiles', this)">All Profiles</button>
+  <button class="tab"        onclick="switchTab('minigame', this)">🎮 Minigame</button>
 </div>
 
 <!-- Content -->
 <div class="main">
+
+  <!-- Match Scores -->
   <div class="tab-panel active" id="tab-scores">
     <div class="stats-bar" id="statsBar" style="display:none">
       <div class="stat-card"><div class="stat-label">Profiles Scored</div><div class="stat-value" id="sTotal">—</div></div>
@@ -319,11 +280,21 @@
       <div class="state"><div class="icon">💝</div><h3>No scores yet</h3><p>Generate profiles then click Score All.</p></div>
     </div>
   </div>
+
+  <!-- All Profiles -->
   <div class="tab-panel" id="tab-profiles">
     <div id="profilesContainer">
       <div class="state"><div class="icon">💝</div><h3>No profiles yet</h3><p>Click Generate to create your first batch.</p></div>
     </div>
   </div>
+
+  <!-- Minigame -->
+  <div class="tab-panel" id="tab-minigame">
+    <div id="minigameContainer">
+      <div class="state"><div class="icon">🎮</div><h3>Ready to play?</h3><p>Generate profiles first, then come back here.</p></div>
+    </div>
+  </div>
+
 </div>
 
 <script>
@@ -333,6 +304,7 @@
 
   let apiKey = localStorage.getItem('matchDashKey') || '';
   let state  = { mainProfile: null, mainMatchPct: null, fields: [], profiles: [], scored: [] };
+  let mg     = { groups: [], currentGroup: 0, visibleFields: [] };
 
   // ── Boot ──────────────────────────────────────────────────────
   window.addEventListener('DOMContentLoaded', () => {
@@ -363,33 +335,30 @@
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.getElementById('tab-' + name).classList.add('active');
     btn.classList.add('active');
+    if (name === 'minigame') initMinigame();
   }
 
-  // ── Sheet fetch (read-only, uses API key) ─────────────────────
+  // ── Sheet fetch ───────────────────────────────────────────────
   async function fetchTab(tab) {
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${encodeURIComponent(tab)}?key=${apiKey}`;
     const res = await fetch(url);
-    if (!res.ok) { const b = await res.json().catch(() => ({})); throw new Error(b?.error?.message || `HTTP ${res.status}`); }
+    if (!res.ok) { const b = await res.json().catch(()=>({})); throw new Error(b?.error?.message || `HTTP ${res.status}`); }
     return (await res.json()).values || [];
   }
 
   async function loadFromSheet() {
     try {
       const [scoreRows, profileRows] = await Promise.all([
-        fetchTab(SCORES_TAB).catch(() => []),
-        fetchTab(PROFILES_TAB).catch(() => []),
+        fetchTab(SCORES_TAB).catch(()=>[]),
+        fetchTab(PROFILES_TAB).catch(()=>[]),
       ]);
-      const profileData = parseProfiles(profileRows);
-      const scoreData   = parseScores(scoreRows);
-      applyProfileData(profileData);
-      applyScoreData(scoreData);
+      applyProfileData(parseProfiles(profileRows));
+      applyScoreData(parseScores(scoreRows));
       updateTimestamp();
-    } catch (e) {
-      showError(e.message);
-    }
+    } catch(e) { showError(e.message); }
   }
 
-  // ── API calls (generate / score) ──────────────────────────────
+  // ── API calls ─────────────────────────────────────────────────
   async function runGenerate() {
     const btn = document.getElementById('btnGenerate');
     const num = parseInt(document.getElementById('numInput').value) || 5;
@@ -398,16 +367,11 @@
       const res  = await fetch(`/api/generate?num=${num}`);
       const data = await res.json();
       if (data.error) throw new Error(data.error);
-      applyProfileData({ mainProfile: data.mainProfile, profiles: data.profiles, fields: data.fields });
+      applyProfileData({ mainProfile: data.mainProfile, profiles: data.profiles.map((f,i)=>({num:i+1,fields:f})), fields: data.fields });
       updateTimestamp();
-      // Switch to profiles tab to show result
-      const profileTab = document.querySelector('.tab:nth-child(2)');
-      switchTab('profiles', profileTab);
-    } catch (e) {
-      alert('Generate failed: ' + e.message);
-    } finally {
-      setLoading(btn, false);
-    }
+      document.querySelector('.tab:nth-child(2)').click();
+    } catch(e) { alert('Generate failed: ' + e.message); }
+    finally { setLoading(btn, false); }
   }
 
   async function runScore() {
@@ -419,33 +383,25 @@
       if (data.error) throw new Error(data.error);
       applyScoreData({ scored: data.scored, fields: data.fields });
       updateTimestamp();
-      // Switch to scores tab
-      const scoresTab = document.querySelector('.tab:nth-child(1)');
-      switchTab('scores', scoresTab);
-    } catch (e) {
-      alert('Score failed: ' + e.message);
-    } finally {
-      setLoading(btn, false);
-    }
+      document.querySelector('.tab:nth-child(1)').click();
+    } catch(e) { alert('Score failed: ' + e.message); }
+    finally { setLoading(btn, false); }
   }
 
-  // ── Apply data to UI ──────────────────────────────────────────
+  // ── Apply data ────────────────────────────────────────────────
   function applyProfileData({ mainProfile, profiles, fields }) {
     state.mainProfile = mainProfile;
     state.profiles    = profiles;
-    state.fields      = fields.length ? fields : state.fields;
+    if (fields?.length) state.fields = fields;
     updateBanner();
-    renderProfiles(profiles, fields, mainProfile);
+    renderProfiles(profiles, state.fields, mainProfile);
   }
 
   function applyScoreData({ scored, fields }) {
     if (!scored?.length) return;
     state.scored = scored;
     if (fields?.length) state.fields = fields;
-
-    // Find main profile's score for banner
-    const mainPct = findMainScore(scored);
-    state.mainMatchPct = mainPct;
+    state.mainMatchPct = findMainScore(scored);
     updateBanner();
     renderScores(scored, state.fields);
   }
@@ -453,34 +409,25 @@
   function findMainScore(scored) {
     if (!state.mainProfile || !scored?.length) return null;
     const mp = state.mainProfile;
-    const match = scored.find(e =>
-      Object.keys(mp).every(k => (e.profile[k] || '') === (mp[k] || ''))
-    );
-    return match ? match.matchPct : null;
+    const m  = scored.find(e => Object.keys(mp).every(k => (e.profile[k]||'') === (mp[k]||'')));
+    return m ? m.matchPct : null;
   }
 
   // ── Banner ────────────────────────────────────────────────────
   function updateBanner() {
-    const fieldsEl = document.getElementById('bannerFields');
-    const scoreEl  = document.getElementById('bannerScore');
-    const mp = state.mainProfile;
-
+    const fEl = document.getElementById('bannerFields');
+    const sEl = document.getElementById('bannerScore');
+    const mp  = state.mainProfile;
     if (!mp || !Object.keys(mp).length) {
-      fieldsEl.innerHTML = '<span class="banner-empty">No profile yet — generate profiles to get started</span>';
-      scoreEl.innerHTML  = '';
+      fEl.innerHTML = '<span class="banner-empty">No profile yet — generate profiles to get started</span>';
+      sEl.innerHTML = '';
       return;
     }
-
-    fieldsEl.innerHTML = Object.entries(mp)
-      .map(([k, v]) => `<span class="banner-field"><b>${k}:</b> ${v || '—'}</span>`)
-      .join('');
-
+    fEl.innerHTML = Object.entries(mp).map(([k,v])=>`<span class="banner-field"><b>${k}:</b> ${v||'—'}</span>`).join('');
     if (state.mainMatchPct !== null) {
-      const color = pctColor(state.mainMatchPct);
-      scoreEl.innerHTML = `<span class="banner-score" style="background:${color}20;color:${color};border:1px solid ${color}40">${state.mainMatchPct}% match</span>`;
-    } else {
-      scoreEl.innerHTML = '';
-    }
+      const c = pctColor(state.mainMatchPct);
+      sEl.innerHTML = `<span class="banner-score" style="background:${c}20;color:${c};border:1px solid ${c}40">${state.mainMatchPct}% match</span>`;
+    } else { sEl.innerHTML = ''; }
   }
 
   // ── Parsers ───────────────────────────────────────────────────
@@ -488,21 +435,18 @@
     const mainIdx = rows.findIndex(r => r?.[0]?.includes('MAIN PROFILE'));
     let mainProfile = null;
     if (mainIdx >= 0) {
-      const headers = rows[mainIdx + 1] || [];
-      const values  = rows[mainIdx + 2] || [];
-      mainProfile = Object.fromEntries(headers.map((h, i) => [h, values[i] || '']));
+      const h = rows[mainIdx+1]||[], v = rows[mainIdx+2]||[];
+      mainProfile = Object.fromEntries(h.map((k,i)=>[k,v[i]||'']));
     }
-
     const allIdx = rows.findIndex(r => r?.[0]?.includes('ALL') && r?.[0]?.includes('GENERATED PROFILES'));
-    const profiles = [];
-    let fields = [];
+    const profiles = []; let fields = [];
     if (allIdx >= 0) {
-      fields = (rows[allIdx + 1] || []).slice(1);
-      for (let i = allIdx + 2; i < rows.length; i++) {
+      fields = (rows[allIdx+1]||[]).slice(1);
+      for (let i = allIdx+2; i < rows.length; i++) {
         const r = rows[i];
         if (!r?.length || !r[0]) continue;
         const p = { num: r[0], fields: {} };
-        fields.forEach((f, j) => { p.fields[f] = r[j + 1] || ''; });
+        fields.forEach((f,j)=>{ p.fields[f] = r[j+1]||''; });
         profiles.push(p);
       }
     }
@@ -510,127 +454,215 @@
   }
 
   function parseScores(rows) {
-    const rankIdx = rows.findIndex(r => r?.[0]?.includes('RANKED PROFILES'));
-    if (rankIdx < 0) return { scored: [], fields: [] };
-
-    const header  = rows[rankIdx + 1] || [];
-    const bStart  = header.findIndex(h => h?.includes('✓/✗'));
-    const mainH   = bStart >= 0 ? header.slice(0, bStart) : header;
-    const bHead   = bStart >= 0 ? header.slice(bStart) : [];
-    const fields  = mainH.slice(4);
-
+    const ri = rows.findIndex(r => r?.[0]?.includes('RANKED PROFILES'));
+    if (ri < 0) return { scored: [], fields: [] };
+    const header = rows[ri+1]||[];
+    const bs = header.findIndex(h=>h?.includes('✓/✗'));
+    const mainH = bs>=0 ? header.slice(0,bs) : header;
+    const bHead = bs>=0 ? header.slice(bs) : [];
+    const fields = mainH.slice(4);
     const scored = [];
-    for (let i = rankIdx + 2; i < rows.length; i++) {
+    for (let i = ri+2; i < rows.length; i++) {
       const r = rows[i];
-      if (!r?.length || !r[0]) continue;
-      const pct = parseFloat((r[3] || '0').replace('%', '')) || 0;
-      const e = {
-        rank: parseInt(r[0]) || scored.length + 1,
-        score: parseFloat(r[1]) || 0,
-        maxScore: parseFloat(r[2]) || 0,
-        matchPct: pct,
-        profile: {},
-        breakdown: {},
-      };
-      fields.forEach((f, j)  => { e.profile[f] = r[4 + j] || ''; });
-      bHead.forEach((h, j)   => {
-        const field = h.replace(' ✓/✗', '');
-        const cell  = r[bStart + j] || '';
-        e.breakdown[field] = { hit: cell.startsWith('✓'), label: field };
-      });
+      if (!r?.length||!r[0]) continue;
+      const pct = parseFloat((r[3]||'0').replace('%',''))||0;
+      const e = { rank:parseInt(r[0])||scored.length+1, score:parseFloat(r[1])||0, maxScore:parseFloat(r[2])||0, matchPct:pct, profile:{}, breakdown:{} };
+      fields.forEach((f,j)=>{ e.profile[f]=r[4+j]||''; });
+      bHead.forEach((h,j)=>{ e.breakdown[h.replace(' ✓/✗','')] = { hit:r[bs+j]?.startsWith('✓'), label:h.replace(' ✓/✗','') }; });
       scored.push(e);
     }
     return { scored, fields };
   }
 
   // ── Renderers ─────────────────────────────────────────────────
-  function pctColor(p) {
-    return p >= 80 ? 'var(--green)' : p >= 55 ? 'var(--amber)' : 'var(--red)';
-  }
+  function pctColor(p) { return p>=80?'var(--green)':p>=55?'var(--amber)':'var(--red)'; }
 
   function renderScores(scored, fields) {
-    const container = document.getElementById('scoresContainer');
-    const statsBar  = document.getElementById('statsBar');
-
-    if (!scored?.length) {
-      container.innerHTML = '<div class="state"><div class="icon">💝</div><h3>No scores yet</h3><p>Click Score All to rank your profiles.</p></div>';
-      statsBar.style.display = 'none';
-      return;
-    }
-
-    const pcts = scored.map(p => p.matchPct);
-    const avg  = pcts.reduce((a, b) => a + b, 0) / pcts.length;
-    document.getElementById('sTotal').textContent  = scored.length;
-    document.getElementById('sTop').innerHTML      = Math.max(...pcts).toFixed(1) + '<span class="unit">%</span>';
-    document.getElementById('sAvg').innerHTML      = avg.toFixed(1) + '<span class="unit">%</span>';
-    document.getElementById('sFields').textContent = Object.keys(scored[0]?.breakdown || {}).length;
-    statsBar.style.display = 'flex';
-
-    container.innerHTML = '<div class="leaderboard">' + scored.map(e => {
-      const rc    = e.rank <= 3 ? `rank-${e.rank}` : '';
-      const color = pctColor(e.matchPct);
-      const chips = Object.entries(e.profile).map(([k, v]) => `<span class="field-chip"><b>${k}:</b> ${v||'—'}</span>`).join('');
-      const bd    = Object.values(e.breakdown).map(b => `<span class="chip ${b.hit?'hit':'miss'}">${b.hit?'✓':'✗'} ${b.label}</span>`).join('');
-      return `<div class="profile-card ${rc}">
-        <div class="rank-number">${e.rank}</div>
-        <div>
-          <div class="profile-fields">${chips}</div>
-          <div class="score-meta">
-            <span class="match-pct" style="color:${color}">${e.matchPct}% match</span>
-            <span class="score-pts">${e.score} / ${e.maxScore} pts</span>
-          </div>
-          <div class="bar-track"><div class="bar-fill" style="background:${color}" data-pct="${e.matchPct}"></div></div>
-          <div class="breakdown-row">${bd}</div>
-        </div>
-      </div>`;
-    }).join('') + '</div>';
-
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      document.querySelectorAll('.bar-fill').forEach(el => { el.style.width = el.dataset.pct + '%'; });
+    const c = document.getElementById('scoresContainer');
+    const s = document.getElementById('statsBar');
+    if (!scored?.length) { c.innerHTML = stateHTML('💝','No scores yet','Click Score All to rank your profiles.'); s.style.display='none'; return; }
+    const pcts = scored.map(p=>p.matchPct);
+    const avg  = pcts.reduce((a,b)=>a+b,0)/pcts.length;
+    document.getElementById('sTotal').textContent = scored.length;
+    document.getElementById('sTop').innerHTML     = Math.max(...pcts).toFixed(1)+'<span class="unit">%</span>';
+    document.getElementById('sAvg').innerHTML     = avg.toFixed(1)+'<span class="unit">%</span>';
+    document.getElementById('sFields').textContent = Object.keys(scored[0]?.breakdown||{}).length;
+    s.style.display = 'flex';
+    c.innerHTML = '<div class="leaderboard">'+scored.map(e=>{
+      const rc=e.rank<=3?`rank-${e.rank}`:'', color=pctColor(e.matchPct);
+      const chips=Object.entries(e.profile).map(([k,v])=>`<span class="field-chip"><b>${k}:</b> ${v||'—'}</span>`).join('');
+      const bd=Object.values(e.breakdown).map(b=>`<span class="chip ${b.hit?'hit':'miss'}">${b.hit?'✓':'✗'} ${b.label}</span>`).join('');
+      return `<div class="profile-card ${rc}"><div class="rank-number">${e.rank}</div><div>
+        <div class="profile-fields">${chips}</div>
+        <div class="score-meta"><span class="match-pct" style="color:${color}">${e.matchPct}% match</span><span class="score-pts">${e.score}/${e.maxScore} pts</span></div>
+        <div class="bar-track"><div class="bar-fill" style="background:${color}" data-pct="${e.matchPct}"></div></div>
+        <div class="breakdown-row">${bd}</div>
+      </div></div>`;
+    }).join('')+'</div>';
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      document.querySelectorAll('.bar-fill').forEach(el=>{ el.style.width=el.dataset.pct+'%'; });
     }));
   }
 
   function renderProfiles(profiles, fields, mainProfile) {
-    const container = document.getElementById('profilesContainer');
+    const c = document.getElementById('profilesContainer');
+    if (!profiles?.length) { c.innerHTML = stateHTML('💝','No profiles yet','Click Generate to create your first batch.'); return; }
+    function isMain(p) {
+      if (!mainProfile) return false;
+      const f = p.fields||p;
+      return (fields.length?fields:Object.keys(mainProfile)).every(k=>(f[k]||')===(mainProfile[k]||''));
+    }
+    c.innerHTML = '<div class="profile-grid">'+profiles.map(p=>{
+      const f=p.fields||p, main=isMain(p);
+      const rows=(fields.length?fields:Object.keys(f)).map(k=>`<div class="grid-row"><span class="grid-key">${k}</span><span class="grid-val">${f[k]||'—'}</span></div>`).join('');
+      return `<div class="grid-card ${main?'is-main':''}">
+        ${main?'<div class="main-badge">★ Main Pick</div>':`<div class="grid-num">Profile #${p.num||'?'}</div>`}${rows}</div>`;
+    }).join('')+'</div>';
+  }
+
+  // ── Minigame ──────────────────────────────────────────────────
+  function initMinigame() {
+    const c = document.getElementById('minigameContainer');
+    const profiles = state.profiles;
     if (!profiles?.length) {
-      container.innerHTML = '<div class="state"><div class="icon">💝</div><h3>No profiles yet</h3><p>Click Generate to create your first batch.</p></div>';
+      c.innerHTML = stateHTML('🎮','Ready to play?','Generate profiles first, then come back here.');
       return;
     }
 
-    function isMain(p) {
-      if (!mainProfile) return false;
-      const pFields = p.fields || p;
-      return (fields.length ? fields : Object.keys(mainProfile))
-        .every(f => (pFields[f] || '') === (mainProfile[f] || ''));
+    // Separate main profile from the rest
+    const mp = state.mainProfile;
+    const others = profiles.filter(p => {
+      if (!mp) return true;
+      const f = p.fields||p;
+      return !state.fields.every(k=>(f[k]||'')===(mp[k]||''));
+    });
+
+    if (others.length === 0) {
+      c.innerHTML = stateHTML('🎮','Only one profile','Generate more profiles to use the minigame.');
+      return;
     }
 
-    container.innerHTML = '<div class="profile-grid">' + profiles.map(p => {
-      const f    = p.fields || p;
-      const main = isMain(p);
-      const rows = (fields.length ? fields : Object.keys(f))
-        .map(k => `<div class="grid-row"><span class="grid-key">${k}</span><span class="grid-val">${f[k]||'—'}</span></div>`).join('');
-      return `<div class="grid-card ${main?'is-main':''}">
-        ${main ? '<div class="main-badge">★ Main Pick</div>' : `<div class="grid-num">Profile #${p.num||'?'}</div>`}
-        ${rows}
+    // Split into groups of 5
+    const groups = [];
+    for (let i = 0; i < others.length; i += 5) groups.push(others.slice(i, i+5));
+
+    mg = { groups, currentGroup: 0, visibleFields: pickMgFields() };
+    renderMgGroup();
+  }
+
+  function pickMgFields() {
+    const all = [...state.fields];
+    for (let i = all.length-1; i > 0; i--) {
+      const j = Math.floor(Math.random()*(i+1));
+      [all[i], all[j]] = [all[j], all[i]];
+    }
+    return all.slice(0, Math.min(5, all.length));
+  }
+
+  function renderMgGroup() {
+    const c = document.getElementById('minigameContainer');
+    const { groups, currentGroup, visibleFields } = mg;
+    const group       = groups[currentGroup];
+    const hiddenFields = state.fields.filter(f => !visibleFields.includes(f));
+    const total        = groups.length;
+    const pct          = ((currentGroup+1)/total*100).toFixed(0);
+    const isFirst      = currentGroup === 0;
+    const isLast       = currentGroup === total-1;
+
+    // Main profile reference
+    const mpHTML = state.mainProfile ? `
+      <div class="mg-main-ref">
+        <div class="banner-badge">★ Main Pick</div>
+        <div class="banner-fields">${Object.entries(state.mainProfile).map(([k,v])=>`<span class="banner-field"><b>${k}:</b> ${v||'—'}</span>`).join('')}</div>
+      </div>` : '';
+
+    // Progress header
+    const headerHTML = `
+      <div class="mg-header">
+        <div class="mg-header-row">
+          <span class="mg-group-label">Group <b>${currentGroup+1}</b> of <b>${total}</b> &nbsp;·&nbsp; ${group.length} profiles</span>
+          <div class="mg-field-tags">
+            <span>Showing:</span>
+            ${visibleFields.map(f=>`<span class="mg-tag">${f}</span>`).join('')}
+          </div>
+        </div>
+        <div class="mg-progress-track"><div class="mg-progress-fill" style="width:${pct}%"></div></div>
       </div>`;
-    }).join('') + '</div>';
+
+    // Cards
+    const cardsHTML = `
+      <div class="minigame-grid">
+        ${group.map((p, idx) => {
+          const f      = p.fields || p;
+          const num    = currentGroup*5 + idx + 1;
+          const front  = visibleFields.map(k=>`<div class="mg-row"><span class="mg-key">${k}</span><span class="mg-val">${f[k]||'—'}</span></div>`).join('');
+          const back   = hiddenFields.length
+            ? hiddenFields.map(k=>`<div class="mg-row"><span class="mg-key">${k}</span><span class="mg-val">${f[k]||'—'}</span></div>`).join('')
+            : '<div class="mg-no-hidden">All fields shown on front</div>';
+          return `
+            <div class="flip-scene" onclick="this.classList.toggle('flipped')">
+              <div class="flip-card-inner">
+                <div class="flip-face flip-front">
+                  <div class="mg-card-label">Profile #${num}</div>
+                  <div class="mg-fields">${front}</div>
+                  <div class="mg-hint">${hiddenFields.length ? `Tap to reveal ${hiddenFields.length} more ▼` : 'All fields visible'}</div>
+                </div>
+                <div class="flip-face flip-back">
+                  <div class="mg-card-label">Profile #${num} — Hidden Fields</div>
+                  <div class="mg-fields">${back}</div>
+                  <div class="mg-hint">Tap to go back ▲</div>
+                </div>
+              </div>
+            </div>`;
+        }).join('')}
+      </div>`;
+
+    // Navigation
+    const navHTML = `
+      <div class="minigame-nav">
+        <button class="btn btn-outline" onclick="mgPrev()" ${isFirst?'disabled':''}>← Previous</button>
+        <span class="mg-nav-count">${currentGroup+1} / ${total}</span>
+        <button class="btn btn-primary" onclick="mgNext()">${isLast?'Finish 🎉':'Next Group →'}</button>
+      </div>`;
+
+    c.innerHTML = mpHTML + headerHTML + cardsHTML + navHTML;
+  }
+
+  function mgNext() {
+    if (mg.currentGroup < mg.groups.length-1) {
+      mg.currentGroup++;
+      mg.visibleFields = pickMgFields();
+      renderMgGroup();
+    } else {
+      document.getElementById('minigameContainer').innerHTML = `
+        <div class="state">
+          <div class="icon">🎉</div>
+          <h3>You've seen them all!</h3>
+          <p>Check the Match Scores tab to see how everyone ranked.</p>
+          <br>
+          <button class="btn btn-primary" style="margin:0 auto" onclick="initMinigame()">Play Again</button>
+        </div>`;
+    }
+  }
+
+  function mgPrev() {
+    if (mg.currentGroup > 0) {
+      mg.currentGroup--;
+      mg.visibleFields = pickMgFields();
+      renderMgGroup();
+    }
   }
 
   // ── Helpers ───────────────────────────────────────────────────
-  function setLoading(btn, on) {
-    btn.disabled = on;
-    btn.classList.toggle('loading', on);
-  }
-
+  function setLoading(btn, on) { btn.disabled=on; btn.classList.toggle('loading',on); }
+  function stateHTML(icon,title,msg) { return `<div class="state"><div class="icon">${icon}</div><h3>${title}</h3><p>${msg}</p></div>`; }
   function showError(msg) {
-    const html = `<div class="state"><div class="icon">⚠️</div><h3>Couldn't load data</h3><p>${msg}</p><br><button class="btn btn-primary" onclick="openSettings()">Check API Key</button></div>`;
-    document.getElementById('scoresContainer').innerHTML = html;
-    document.getElementById('profilesContainer').innerHTML = html;
+    const html=`<div class="state"><div class="icon">⚠️</div><h3>Couldn't load data</h3><p>${msg}</p><br><button class="btn btn-primary" onclick="openSettings()">Check API Key</button></div>`;
+    document.getElementById('scoresContainer').innerHTML=html;
+    document.getElementById('profilesContainer').innerHTML=html;
   }
-
   function updateTimestamp() {
-    document.getElementById('lastUpdated').textContent =
-      'Updated ' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+    document.getElementById('lastUpdated').textContent='Updated '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
   }
 </script>
 </body>
