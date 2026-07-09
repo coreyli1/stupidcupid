@@ -118,6 +118,9 @@
     .grid-val { font-weight: 500; text-align: left; word-break: break-word; line-height: 1.4; }
 
     /* ── Minigame ────────────────────────────────────────────── */
+    .mg-main-section { margin-bottom: 26px; padding-bottom: 22px; border-bottom: 1px solid var(--border); }
+    .mg-section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-3); margin-bottom: 10px; }
+    .mg-main-card { width: 220px; max-width: 100%; }
     .mg-header { margin-bottom: 20px; }
     .mg-header-row {
       display: flex;
@@ -241,10 +244,8 @@
 
 <!-- Controls -->
 <div class="controls">
-  <span class="controls-label">Profiles</span>
-  <input class="num-input" type="number" id="numInput" value="5" min="1" max="50" />
   <button class="btn btn-primary" id="btnGenerate" onclick="runGenerate()">
-    <span class="spinner"></span><span class="btn-label">Generate</span>
+    <span class="spinner"></span><span class="btn-label">Generate 5</span>
   </button>
   <div class="ctrl-divider"></div>
   <button class="btn btn-secondary" id="btnScore" onclick="runScore()">
@@ -355,7 +356,7 @@
   // ── API calls ─────────────────────────────────────────────────
   async function runGenerate() {
     const btn = document.getElementById('btnGenerate');
-    const num = parseInt(document.getElementById('numInput').value) || 5;
+    const num = 5;
     setLoading(btn, true);
     try {
       const res  = await fetch(`/api/generate?num=${num}`);
@@ -363,7 +364,12 @@
       if (data.error) throw new Error(data.error);
       applyProfileData({ mainProfile: data.mainProfile, profiles: data.profiles.map((f,i)=>({num:i+1,fields:f})), fields: data.fields });
       updateTimestamp();
-      document.querySelector('.tab:nth-child(2)').click();
+      const activeTab = document.querySelector('.tab.active');
+      if (activeTab?.textContent.includes('Minigame')) {
+        initMinigame();
+      } else {
+        document.querySelector('.tab:nth-child(2)').click();
+      }
     } catch(e) { alert('Generate failed: ' + e.message); }
     finally { setLoading(btn, false); }
   }
@@ -563,6 +569,38 @@
     const isFirst      = currentGroup === 0;
     const isLast       = currentGroup === total-1;
 
+    // Cards
+    function fieldRows(f, keys) {
+      return keys.map(k=>`<div class="mg-row"><span class="mg-key">${k}</span><span class="mg-val">${f[k]||'—'}</span></div>`).join('');
+    }
+
+    // Main profile — its own section, separate from the paginated group grid
+    const mainSectionHTML = state.mainProfile ? (() => {
+      const f    = state.mainProfile;
+      const front = fieldRows(f, visibleFields);
+      const back  = hiddenFields.length ? fieldRows(f, hiddenFields) : '<div class="mg-no-hidden">All fields shown on front</div>';
+      return `
+        <div class="mg-main-section">
+          <div class="mg-section-label">Your Main Pick</div>
+          <div class="mg-main-card">
+            <div class="flip-scene is-main" onclick="this.classList.toggle('flipped')">
+              <div class="flip-card-inner">
+                <div class="flip-face flip-front">
+                  <div class="main-badge">★ Main Pick</div>
+                  <div class="mg-fields">${front}</div>
+                  <div class="mg-hint">${hiddenFields.length ? `Tap to reveal ${hiddenFields.length} more ▼` : 'All fields visible'}</div>
+                </div>
+                <div class="flip-face flip-back">
+                  <div class="mg-card-label">Main Pick — Hidden Fields</div>
+                  <div class="mg-fields">${back}</div>
+                  <div class="mg-hint">Tap to go back ▲</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>`;
+    })() : '';
+
     // Progress header
     const headerHTML = `
       <div class="mg-header">
@@ -576,35 +614,8 @@
         <div class="mg-progress-track"><div class="mg-progress-fill" style="width:${pct}%"></div></div>
       </div>`;
 
-    // Cards
-    function fieldRows(f, keys) {
-      return keys.map(k=>`<div class="mg-row"><span class="mg-key">${k}</span><span class="mg-val">${f[k]||'—'}</span></div>`).join('');
-    }
-
-    const mainCardHTML = state.mainProfile ? (() => {
-      const f    = state.mainProfile;
-      const front = fieldRows(f, visibleFields);
-      const back  = hiddenFields.length ? fieldRows(f, hiddenFields) : '<div class="mg-no-hidden">All fields shown on front</div>';
-      return `
-        <div class="flip-scene is-main" onclick="this.classList.toggle('flipped')">
-          <div class="flip-card-inner">
-            <div class="flip-face flip-front">
-              <div class="main-badge">★ Main Pick</div>
-              <div class="mg-fields">${front}</div>
-              <div class="mg-hint">${hiddenFields.length ? `Tap to reveal ${hiddenFields.length} more ▼` : 'All fields visible'}</div>
-            </div>
-            <div class="flip-face flip-back">
-              <div class="mg-card-label">Main Pick — Hidden Fields</div>
-              <div class="mg-fields">${back}</div>
-              <div class="mg-hint">Tap to go back ▲</div>
-            </div>
-          </div>
-        </div>`;
-    })() : '';
-
     const cardsHTML = `
       <div class="minigame-grid">
-        ${mainCardHTML}
         ${group.map((p, idx) => {
           const f      = p.fields || p;
           const num    = currentGroup*5 + idx + 1;
@@ -636,7 +647,7 @@
         <button class="btn btn-primary" onclick="mgNext()">${isLast?'Finish 🎉':'Next Group →'}</button>
       </div>`;
 
-    c.innerHTML = headerHTML + cardsHTML + navHTML;
+    c.innerHTML = mainSectionHTML + headerHTML + cardsHTML + navHTML;
   }
 
   function mgNext() {
